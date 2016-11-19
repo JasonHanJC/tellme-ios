@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NotOkayTableViewController.h
 //  TellMe
 //
 //  Created by Juncheng Han on 11/19/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface NotOkayTableViewController : UITableViewController
 
 @end
-

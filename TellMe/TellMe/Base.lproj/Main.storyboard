@@ -1,26 +1,212 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bhy-LL-Uj8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="Sn9-8N-DED">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tabBarController id="Bhy-LL-Uj8" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="35j-qb-NNU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aeJ-dr-K9M" kind="relationship" relationship="viewControllers" id="vPA-A6-ezW"/>
+                        <segue destination="e6e-U4-bJS" kind="relationship" relationship="viewControllers" id="H8A-1l-y6e"/>
+                        <segue destination="7Tf-Pe-f4b" kind="relationship" relationship="viewControllers" id="0VA-yq-NNp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDn-9b-DM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1087" y="1527"/>
+        </scene>
+        <!--Okay Things-->
+        <scene sceneID="koH-8k-95d">
+            <objects>
+                <tableViewController id="MdP-Um-gVH" customClass="OkayTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SKt-HF-N61">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OkayThingIdentifier" rowHeight="75" id="Cnu-le-DUE">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cnu-le-DUE" id="jgG-SD-VRT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MdP-Um-gVH" id="k7B-gT-aDg"/>
+                            <outlet property="delegate" destination="MdP-Um-gVH" id="z1k-n3-B4c"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Okay Things" id="Aov-1Z-IZi">
+                        <barButtonItem key="leftBarButtonItem" title="Update" id="PC7-ne-7fj">
+                            <connections>
+                                <action selector="update:" destination="MdP-Um-gVH" id="Hvo-JT-XzS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vb3-QO-azL">
+                            <connections>
+                                <action selector="addOkayThing:" destination="MdP-Um-gVH" id="otZ-Eq-ev7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addOkayBtn" destination="vb3-QO-azL" id="NOs-OJ-Nla"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebb-mN-xmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1073" y="1187"/>
+        </scene>
+        <!--TellMe-->
+        <scene sceneID="NOH-g7-moa">
+            <objects>
+                <tableViewController id="I4L-zf-QNe" customClass="NotificationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="C73-gK-Fpc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationIndentifier" id="Lzf-SX-L7e">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzf-SX-L7e" id="lxs-ej-EWe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I4L-zf-QNe" id="ikj-xu-tiq"/>
+                            <outlet property="delegate" destination="I4L-zf-QNe" id="IPt-sM-Dbe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="TellMe" id="h4r-L8-osc">
+                        <barButtonItem key="rightBarButtonItem" image="Setting" id="V3u-Mi-aOv">
+                            <connections>
+                                <action selector="goToSetting:" destination="I4L-zf-QNe" id="RJa-Z7-9jJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="SettingButton" destination="V3u-Mi-aOv" id="cAu-qE-FX7"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcW-py-H9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="225"/>
+        </scene>
+        <!--Notification-->
+        <scene sceneID="oSz-Bt-AId">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aeJ-dr-K9M" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notification" image="Notification" id="w3Q-lk-2eo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xEZ-Dh-M6l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I4L-zf-QNe" kind="relationship" relationship="rootViewController" id="m0R-Av-loK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmg-f0-ODl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="226"/>
+        </scene>
+        <!--Okay Things-->
+        <scene sceneID="EKr-wu-GQj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e6e-U4-bJS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Okay Things" image="Okay" id="fjO-Em-uKG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WQp-yS-6Am">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MdP-Um-gVH" kind="relationship" relationship="rootViewController" id="WFf-Cd-MO3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vRj-Nd-1IU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="1187"/>
+        </scene>
+        <!--Not Okay Things-->
+        <scene sceneID="Pkt-Eq-aLh">
+            <objects>
+                <tableViewController id="mPZ-fn-mq5" customClass="NotOkayTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="llC-hC-7bJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotOkayIdentifier" rowHeight="75" id="N0O-Cc-2Uv">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N0O-Cc-2Uv" id="OFm-jO-336">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mPZ-fn-mq5" id="3PF-tu-kqG"/>
+                            <outlet property="delegate" destination="mPZ-fn-mq5" id="OJO-hd-Oc1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Not Okay Things" id="IIr-XS-cOn">
+                        <barButtonItem key="leftBarButtonItem" title="Update" id="3Q0-gk-SKK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G0I-dm-r33">
+                            <connections>
+                                <action selector="addNotOkayThing:" destination="mPZ-fn-mq5" id="dd6-w0-jkp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mM8-Ur-RH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="2078"/>
+        </scene>
+        <!--Not Okay-->
+        <scene sceneID="Ths-4I-BYf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Tf-Pe-f4b" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Not Okay" image="NOkay" id="feX-Hu-93W"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oE3-M5-QNd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mPZ-fn-mq5" kind="relationship" relationship="rootViewController" id="eB4-hO-wiN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iUw-RV-SVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="2079"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NOkay" width="21" height="21"/>
+        <image name="Notification" width="22" height="18"/>
+        <image name="Okay" width="21" height="25"/>
+        <image name="Setting" width="20" height="21"/>
+    </resources>
 </document>
