@@ -1,31 +1,30 @@
 //
-//  OkayTableViewController.m
+//  OkayViewController.m
 //  TellMe
 //
 //  Created by Juncheng Han on 11/19/16.
 //  Copyright © 2016 Juncheng Han. All rights reserved.
 //
 
-#import "OkayTableViewController.h"
+#import "OkayViewController.h"
 #import "AppDefines.h"
 #import "StoreHelper.h"
 #import "UIView+Toast.h"
 
-@interface OkayTableViewController ()
+@interface OkayViewController ()
 
 @property (nonatomic, strong) NSMutableArray *okayThingArray;
 
 @end
 
-@implementation OkayTableViewController
+@implementation OkayViewController
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.tableFooterView = [UIView new];
-    
     [self.updateButton setEnabled:NO];
+    self.tableView.tableFooterView = [UIView new];
     
     if ([[StoreHelper shareInstance] getStoredOkayArray]) {
         self.okayThingArray = [NSMutableArray arrayWithArray:[[StoreHelper shareInstance] getStoredOkayArray]];
@@ -64,12 +63,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OkayThingIdentifier"];
      }
     
+    cell.imageView.image = [UIImage imageNamed:@"Okay"];
     cell.textLabel.text = self.okayThingArray[indexPath.row];
     
     return cell;
 }
 
-- (IBAction)addOkayThing:(UITabBarItem *)sender {
+- (IBAction)addOkayThing:(UIBarButtonItem *)sender {
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Add okay things"
                                                                               message: nil
                                                                        preferredStyle:UIAlertControllerStyleAlert];
@@ -158,7 +158,7 @@
             toastMsg = error;
         }
         
-        [self.view makeToast:toastMsg];
+        [self.view makeToast:toastMsg duration:1.0 position:[NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH/2.0, SCREEN_HEIGHT/2.0 + 200)]];
     }];
 }
 

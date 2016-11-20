@@ -17,6 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.48 green:0.67 blue:0.90 alpha:1.0]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+    [UIColor whiteColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"IndieFlower" size:30.0], NSFontAttributeName,nil]];
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.48 green:0.67 blue:0.90 alpha:1.0]];
+    
     
     
     PNConfiguration *configuration = [PNConfiguration configurationWithPublishKey:@"pub-c-4a0cff7d-24e0-4af6-8cda-64cea4bcf4e3"
@@ -25,8 +33,6 @@
     
     [self.client addListener:self];
     [self.client subscribeToChannels:@[@"dataManager"] withPresence:NO];
-    
-    
     
 
     if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
@@ -82,6 +88,28 @@
     
     NSLog(@"Userinfo %@",response.notification.request.content.userInfo);
     
+}
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [self.client addPushNotificationsOnChannels:@[@"dataManager"] withDevicePushToken:deviceToken andCompletion:^(PNAcknowledgmentStatus * _Nonnull status) {
+        if (!status.isError) {
+            
+            // Handle successful push notification enabling on passed channels.
+            NSLog(@"add the device to the channel");
+        }
+        else {
+            NSLog(@"failure add the device to the channel");
+            /**
+             Handle modification error. Check 'category' property
+             to find out possible reason because of which request did fail.
+             Review 'errorData' property (which has PNErrorData data type) of status
+             object to get additional information about issue.
+             
+             Request can be resent using: [status retry];
+             */
+        }
+    }];
 }
 
 #pragma mark - pubnub delegate

@@ -14,16 +14,19 @@
 		9678E1B01DE0D1A9002ED21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9678E1AF1DE0D1A9002ED21A /* Assets.xcassets */; };
 		9678E1B31DE0D1A9002ED21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9678E1B11DE0D1A9002ED21A /* LaunchScreen.storyboard */; };
 		9678E1BC1DE0D684002ED21A /* NotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1BB1DE0D684002ED21A /* NotificationTableViewController.m */; };
-		9678E1BF1DE0D697002ED21A /* OkayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1BE1DE0D697002ED21A /* OkayTableViewController.m */; };
-		9678E1C21DE0D6B0002ED21A /* NotOkayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1C11DE0D6B0002ED21A /* NotOkayTableViewController.m */; };
+		9678E1BF1DE0D697002ED21A /* OkayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1BE1DE0D697002ED21A /* OkayViewController.m */; };
+		9678E1C21DE0D6B0002ED21A /* NotOkayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1C11DE0D6B0002ED21A /* NotOkayViewController.m */; };
 		9678E1DD1DE104F1002ED21A /* StoreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1DC1DE104F1002ED21A /* StoreHelper.m */; };
 		9678E1DF1DE11C7D002ED21A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9678E1DE1DE11C7D002ED21A /* UserNotifications.framework */; };
 		9678E1E31DE131ED002ED21A /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1E21DE131ED002ED21A /* UIView+Toast.m */; };
 		9678E1E51DE134B5002ED21A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9678E1E41DE134B5002ED21A /* QuartzCore.framework */; };
+		96B3F3571DE1817900FDDE46 /* GiddyupStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96B3F3551DE1817900FDDE46 /* GiddyupStd.otf */; };
+		96B3F3581DE1817900FDDE46 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B3F3561DE1817900FDDE46 /* IndieFlower.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		67ACB9175603703E64D7C75A /* Pods_TellMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TellMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		967436981DE1469D002C3576 /* TellMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TellMe.entitlements; sourceTree = "<group>"; };
 		9678E1A01DE0D1A9002ED21A /* TellMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9678E1A41DE0D1A9002ED21A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9678E1A61DE0D1A9002ED21A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,10 +37,10 @@
 		9678E1B41DE0D1A9002ED21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9678E1BA1DE0D684002ED21A /* NotificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewController.h; sourceTree = "<group>"; };
 		9678E1BB1DE0D684002ED21A /* NotificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewController.m; sourceTree = "<group>"; };
-		9678E1BD1DE0D697002ED21A /* OkayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OkayTableViewController.h; sourceTree = "<group>"; };
-		9678E1BE1DE0D697002ED21A /* OkayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OkayTableViewController.m; sourceTree = "<group>"; };
-		9678E1C01DE0D6B0002ED21A /* NotOkayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotOkayTableViewController.h; sourceTree = "<group>"; };
-		9678E1C11DE0D6B0002ED21A /* NotOkayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotOkayTableViewController.m; sourceTree = "<group>"; };
+		9678E1BD1DE0D697002ED21A /* OkayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OkayViewController.h; sourceTree = "<group>"; };
+		9678E1BE1DE0D697002ED21A /* OkayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OkayViewController.m; sourceTree = "<group>"; };
+		9678E1C01DE0D6B0002ED21A /* NotOkayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotOkayViewController.h; sourceTree = "<group>"; };
+		9678E1C11DE0D6B0002ED21A /* NotOkayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotOkayViewController.m; sourceTree = "<group>"; };
 		9678E1C41DE0E89C002ED21A /* AppDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDefines.h; sourceTree = "<group>"; };
 		9678E1DB1DE104F1002ED21A /* StoreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreHelper.h; sourceTree = "<group>"; };
 		9678E1DC1DE104F1002ED21A /* StoreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreHelper.m; sourceTree = "<group>"; };
@@ -45,6 +48,8 @@
 		9678E1E11DE131ED002ED21A /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		9678E1E21DE131ED002ED21A /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		9678E1E41DE134B5002ED21A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		96B3F3551DE1817900FDDE46 /* GiddyupStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GiddyupStd.otf; sourceTree = "<group>"; };
+		96B3F3561DE1817900FDDE46 /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndieFlower.ttf; sourceTree = "<group>"; };
 		97408AA68A349FE858DF3AF1 /* Pods-TellMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TellMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TellMe/Pods-TellMe.debug.xcconfig"; sourceTree = "<group>"; };
 		AA752C7CD99359E43BFA6899 /* Pods-TellMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TellMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TellMe/Pods-TellMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +98,7 @@
 		9678E1A21DE0D1A9002ED21A /* TellMe */ = {
 			isa = PBXGroup;
 			children = (
+				967436981DE1469D002C3576 /* TellMe.entitlements */,
 				9678E1E01DE131BC002ED21A /* Toast */,
 				9678E1AC1DE0D1A9002ED21A /* Main.storyboard */,
 				9678E1AF1DE0D1A9002ED21A /* Assets.xcassets */,
@@ -101,12 +107,14 @@
 				9678E1A31DE0D1A9002ED21A /* Supporting Files */,
 				9678E1BA1DE0D684002ED21A /* NotificationTableViewController.h */,
 				9678E1BB1DE0D684002ED21A /* NotificationTableViewController.m */,
-				9678E1BD1DE0D697002ED21A /* OkayTableViewController.h */,
-				9678E1BE1DE0D697002ED21A /* OkayTableViewController.m */,
-				9678E1C01DE0D6B0002ED21A /* NotOkayTableViewController.h */,
-				9678E1C11DE0D6B0002ED21A /* NotOkayTableViewController.m */,
+				9678E1BD1DE0D697002ED21A /* OkayViewController.h */,
+				9678E1BE1DE0D697002ED21A /* OkayViewController.m */,
+				9678E1C01DE0D6B0002ED21A /* NotOkayViewController.h */,
+				9678E1C11DE0D6B0002ED21A /* NotOkayViewController.m */,
 				9678E1DB1DE104F1002ED21A /* StoreHelper.h */,
 				9678E1DC1DE104F1002ED21A /* StoreHelper.m */,
+				96B3F3551DE1817900FDDE46 /* GiddyupStd.otf */,
+				96B3F3561DE1817900FDDE46 /* IndieFlower.ttf */,
 			);
 			path = TellMe;
 			sourceTree = "<group>";
@@ -175,8 +183,13 @@
 				TargetAttributes = {
 					9678E19F1DE0D1A9002ED21A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 99JD5A3A8H;
+						DevelopmentTeam = C2VVZK2VN8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -203,8 +216,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B3F3581DE1817900FDDE46 /* IndieFlower.ttf in Resources */,
 				9678E1B31DE0D1A9002ED21A /* LaunchScreen.storyboard in Resources */,
 				9678E1B01DE0D1A9002ED21A /* Assets.xcassets in Resources */,
+				96B3F3571DE1817900FDDE46 /* GiddyupStd.otf in Resources */,
 				9678E1AE1DE0D1A9002ED21A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +284,8 @@
 				9678E1A81DE0D1A9002ED21A /* AppDelegate.m in Sources */,
 				9678E1A51DE0D1A9002ED21A /* main.m in Sources */,
 				9678E1E31DE131ED002ED21A /* UIView+Toast.m in Sources */,
-				9678E1BF1DE0D697002ED21A /* OkayTableViewController.m in Sources */,
-				9678E1C21DE0D6B0002ED21A /* NotOkayTableViewController.m in Sources */,
+				9678E1BF1DE0D697002ED21A /* OkayViewController.m in Sources */,
+				9678E1C21DE0D6B0002ED21A /* NotOkayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,11 +406,12 @@
 			baseConfigurationReference = 97408AA68A349FE858DF3AF1 /* Pods-TellMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 99JD5A3A8H;
+				CODE_SIGN_ENTITLEMENTS = TellMe/TellMe.entitlements;
+				DEVELOPMENT_TEAM = C2VVZK2VN8;
 				INFOPLIST_FILE = TellMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dev-camp.app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junchenghan.tellme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -405,11 +421,12 @@
 			baseConfigurationReference = AA752C7CD99359E43BFA6899 /* Pods-TellMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 99JD5A3A8H;
+				CODE_SIGN_ENTITLEMENTS = TellMe/TellMe.entitlements;
+				DEVELOPMENT_TEAM = C2VVZK2VN8;
 				INFOPLIST_FILE = TellMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dev-camp.app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junchenghan.tellme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

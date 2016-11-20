@@ -1,5 +1,5 @@
 //
-//  OkayTableViewController.h
+//  NotOkayViewController.h
 //  TellMe
 //
 //  Created by Juncheng Han on 11/19/16.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OkayTableViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addOkayBtn;
+@interface NotOkayViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *updateButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -1,23 +1,23 @@
 //
-//  NotOkayTableViewController.m
+//  NotOkayViewController.m
 //  TellMe
 //
 //  Created by Juncheng Han on 11/19/16.
 //  Copyright © 2016 Juncheng Han. All rights reserved.
 //
 
-#import "NotOkayTableViewController.h"
+#import "NotOkayViewController.h"
 #import "AppDefines.h"
 #import "StoreHelper.h"
 #import "UIView+Toast.h"
 
-@interface NotOkayTableViewController ()
+@interface NotOkayViewController ()
 
 @property (nonatomic, strong) NSMutableArray *notOkayArray;
 
 @end
 
-@implementation NotOkayTableViewController
+@implementation NotOkayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,6 +64,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"NotOkayIdentifier"];
     }
     
+    cell.imageView.image = [UIImage imageNamed:@"NOkay"];
     cell.textLabel.text = self.notOkayArray[indexPath.row];
     
     return cell;
@@ -158,7 +159,7 @@
             toastMsg = error;
         }
         
-        [self.view makeToast:toastMsg];
+        [self.view makeToast:toastMsg duration:1.0 position:[NSValue valueWithCGPoint:CGPointMake(SCREEN_WIDTH/2.0, SCREEN_HEIGHT/2.0 + 200)]];
     }];
 }
 
