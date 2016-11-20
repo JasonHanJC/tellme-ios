@@ -19,4 +19,7 @@
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
+#define PUBNUB_PUBLISH_KEY @"pub-c-4a0cff7d-24e0-4af6-8cda-64cea4bcf4e3"
+#define PUBNUB_SUBSCRIBE_KEY @"sub-c-08f48a9a-ae8d-11e6-9ab5-0619f8945a4f"
+
 #endif /* AppDefines_h */

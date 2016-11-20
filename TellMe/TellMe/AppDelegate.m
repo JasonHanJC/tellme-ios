@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch
+    
+    // custom the appearance for the navigation bar and tab bar
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.48 green:0.67 blue:0.90 alpha:1.0]];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
     [UIColor whiteColor], NSForegroundColorAttributeName,
@@ -27,8 +29,8 @@
     
     
     
-    PNConfiguration *configuration = [PNConfiguration configurationWithPublishKey:@"pub-c-4a0cff7d-24e0-4af6-8cda-64cea4bcf4e3"
-                                                                     subscribeKey:@"sub-c-08f48a9a-ae8d-11e6-9ab5-0619f8945a4f"];
+    PNConfiguration *configuration = [PNConfiguration configurationWithPublishKey:PUBNUB_PUBLISH_KEY
+                                                                     subscribeKey:PUBNUB_SUBSCRIBE_KEY];
     self.client = [PubNub clientWithConfiguration:configuration];
     
     [self.client addListener:self];

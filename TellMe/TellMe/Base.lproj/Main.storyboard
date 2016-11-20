@@ -43,16 +43,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2TO-dM-RAY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ygk-VE-qW6">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ygk-VE-qW6" id="WJX-ST-eBF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Pqe-Hu-JEu" id="26S-HL-WD8"/>
                                     <outlet property="delegate" destination="Pqe-Hu-JEu" id="9ef-Gp-06v"/>
@@ -91,44 +81,63 @@
             </objects>
             <point key="canvasLocation" x="1117.5999999999999" y="1177.961019490255"/>
         </scene>
-        <!--TellMe-->
-        <scene sceneID="NOH-g7-moa">
+        <!--Tell Me-->
+        <scene sceneID="imN-7p-Pvo">
             <objects>
-                <tableViewController id="I4L-zf-QNe" customClass="NotificationTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="C73-gK-Fpc">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="shn-Tn-4H4" customClass="NotificationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Ci-5W-Qhp"/>
+                        <viewControllerLayoutGuide type="bottom" id="95F-Nl-shw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fbQ-Qz-kQs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-zW-2Yp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="shn-Tn-4H4" id="Mcf-ru-kFl"/>
+                                    <outlet property="delegate" destination="shn-Tn-4H4" id="XMm-US-DDE"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1Z-uR-lcD">
+                                <rect key="frame" x="294" y="539" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.47843137254901957" green="0.66666666666666663" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="7aS-17-rzF"/>
+                                    <constraint firstAttribute="height" constant="60" id="H64-17-oxE"/>
+                                </constraints>
+                                <state key="normal" image="Talk"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationIndentifier" id="Lzf-SX-L7e">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzf-SX-L7e" id="lxs-ej-EWe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="I4L-zf-QNe" id="ikj-xu-tiq"/>
-                            <outlet property="delegate" destination="I4L-zf-QNe" id="IPt-sM-Dbe"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="TellMe" id="h4r-L8-osc">
-                        <barButtonItem key="rightBarButtonItem" image="Setting" id="V3u-Mi-aOv">
+                        <constraints>
+                            <constraint firstItem="pJt-zW-2Yp" firstAttribute="top" secondItem="0Ci-5W-Qhp" secondAttribute="bottom" id="M0u-8z-TkY"/>
+                            <constraint firstItem="95F-Nl-shw" firstAttribute="top" secondItem="pJt-zW-2Yp" secondAttribute="bottom" id="XPb-nQ-DB1"/>
+                            <constraint firstItem="95F-Nl-shw" firstAttribute="top" secondItem="n1Z-uR-lcD" secondAttribute="bottom" constant="19" id="fve-a7-BmP"/>
+                            <constraint firstAttribute="trailing" secondItem="n1Z-uR-lcD" secondAttribute="trailing" constant="21" id="lcr-LF-xex"/>
+                            <constraint firstAttribute="trailing" secondItem="pJt-zW-2Yp" secondAttribute="trailing" id="p3X-aN-uIs"/>
+                            <constraint firstItem="pJt-zW-2Yp" firstAttribute="leading" secondItem="fbQ-Qz-kQs" secondAttribute="leading" id="pFX-NA-dAu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tell Me" id="vIO-qO-WVX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="0Qb-q9-vG2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="goToSetting:" destination="I4L-zf-QNe" id="RJa-Z7-9jJ"/>
+                                <action selector="deletenotifications:" destination="shn-Tn-4H4" id="3Nn-ns-Ccj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="SettingButton" destination="V3u-Mi-aOv" id="cAu-qE-FX7"/>
+                        <outlet property="tableView" destination="pJt-zW-2Yp" id="wgJ-5A-RHO"/>
+                        <outlet property="talkBtnBottomCN" destination="fve-a7-BmP" id="S7p-UI-Q15"/>
+                        <outlet property="talkButton" destination="n1Z-uR-lcD" id="Kl3-dX-vdS"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xcW-py-H9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JI9-vn-DdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="325"/>
+            <point key="canvasLocation" x="1117.5999999999999" y="325.18740629685158"/>
         </scene>
         <!--Tell Me-->
         <scene sceneID="oSz-Bt-AId">
@@ -142,7 +151,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="I4L-zf-QNe" kind="relationship" relationship="rootViewController" id="m0R-Av-loK"/>
+                        <segue destination="shn-Tn-4H4" kind="relationship" relationship="rootViewController" id="y2Z-DK-BYT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmg-f0-ODl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,6 +280,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hxk-iN-Evj">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="MZ9-Ot-luq">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cancelAction:" destination="FEG-Av-fRM" id="z3f-LN-A6E"/>
                             </connections>
@@ -308,7 +318,7 @@
         <image name="NOkay" width="21" height="21"/>
         <image name="Notification" width="22" height="18"/>
         <image name="Okay" width="21" height="25"/>
-        <image name="Setting" width="20" height="21"/>
+        <image name="Talk" width="40" height="33"/>
         <image name="Update" width="22" height="20"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

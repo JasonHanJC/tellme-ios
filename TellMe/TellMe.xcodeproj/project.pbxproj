@@ -13,7 +13,7 @@
 		9678E1AE1DE0D1A9002ED21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9678E1AC1DE0D1A9002ED21A /* Main.storyboard */; };
 		9678E1B01DE0D1A9002ED21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9678E1AF1DE0D1A9002ED21A /* Assets.xcassets */; };
 		9678E1B31DE0D1A9002ED21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9678E1B11DE0D1A9002ED21A /* LaunchScreen.storyboard */; };
-		9678E1BC1DE0D684002ED21A /* NotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1BB1DE0D684002ED21A /* NotificationTableViewController.m */; };
+		9678E1BC1DE0D684002ED21A /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1BB1DE0D684002ED21A /* NotificationViewController.m */; };
 		9678E1BF1DE0D697002ED21A /* OkayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1BE1DE0D697002ED21A /* OkayViewController.m */; };
 		9678E1C21DE0D6B0002ED21A /* NotOkayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1C11DE0D6B0002ED21A /* NotOkayViewController.m */; };
 		9678E1DD1DE104F1002ED21A /* StoreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678E1DC1DE104F1002ED21A /* StoreHelper.m */; };
@@ -23,6 +23,10 @@
 		96B3F3571DE1817900FDDE46 /* GiddyupStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96B3F3551DE1817900FDDE46 /* GiddyupStd.otf */; };
 		96B3F3581DE1817900FDDE46 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B3F3561DE1817900FDDE46 /* IndieFlower.ttf */; };
 		96B3F35B1DE18F7500FDDE46 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F35A1DE18F7500FDDE46 /* SettingViewController.m */; };
+		96B3F3631DE22B4E00FDDE46 /* ImageCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F35E1DE22B4E00FDDE46 /* ImageCacheManager.m */; };
+		96B3F3641DE22B4E00FDDE46 /* JSONHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F3601DE22B4E00FDDE46 /* JSONHelper.m */; };
+		96B3F3651DE22B4E00FDDE46 /* UIImage+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F3621DE22B4E00FDDE46 /* UIImage+Cache.m */; };
+		96B3F3681DE2377800FDDE46 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F3671DE2377800FDDE46 /* Notification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +40,8 @@
 		9678E1AF1DE0D1A9002ED21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9678E1B21DE0D1A9002ED21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9678E1B41DE0D1A9002ED21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9678E1BA1DE0D684002ED21A /* NotificationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewController.h; sourceTree = "<group>"; };
-		9678E1BB1DE0D684002ED21A /* NotificationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewController.m; sourceTree = "<group>"; };
+		9678E1BA1DE0D684002ED21A /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		9678E1BB1DE0D684002ED21A /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		9678E1BD1DE0D697002ED21A /* OkayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OkayViewController.h; sourceTree = "<group>"; };
 		9678E1BE1DE0D697002ED21A /* OkayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OkayViewController.m; sourceTree = "<group>"; };
 		9678E1C01DE0D6B0002ED21A /* NotOkayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotOkayViewController.h; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 		96B3F3561DE1817900FDDE46 /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndieFlower.ttf; sourceTree = "<group>"; };
 		96B3F3591DE18F7500FDDE46 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		96B3F35A1DE18F7500FDDE46 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		96B3F35D1DE22B4E00FDDE46 /* ImageCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheManager.h; sourceTree = "<group>"; };
+		96B3F35E1DE22B4E00FDDE46 /* ImageCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheManager.m; sourceTree = "<group>"; };
+		96B3F35F1DE22B4E00FDDE46 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHelper.h; sourceTree = "<group>"; };
+		96B3F3601DE22B4E00FDDE46 /* JSONHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHelper.m; sourceTree = "<group>"; };
+		96B3F3611DE22B4E00FDDE46 /* UIImage+Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cache.h"; sourceTree = "<group>"; };
+		96B3F3621DE22B4E00FDDE46 /* UIImage+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cache.m"; sourceTree = "<group>"; };
+		96B3F3661DE2377800FDDE46 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		96B3F3671DE2377800FDDE46 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
 		97408AA68A349FE858DF3AF1 /* Pods-TellMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TellMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TellMe/Pods-TellMe.debug.xcconfig"; sourceTree = "<group>"; };
 		AA752C7CD99359E43BFA6899 /* Pods-TellMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TellMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TellMe/Pods-TellMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +113,7 @@
 		9678E1A21DE0D1A9002ED21A /* TellMe */ = {
 			isa = PBXGroup;
 			children = (
+				96B3F35C1DE22B3900FDDE46 /* ImageCaching */,
 				967436981DE1469D002C3576 /* TellMe.entitlements */,
 				9678E1E01DE131BC002ED21A /* Toast */,
 				9678E1AC1DE0D1A9002ED21A /* Main.storyboard */,
@@ -108,8 +121,8 @@
 				9678E1B11DE0D1A9002ED21A /* LaunchScreen.storyboard */,
 				9678E1B41DE0D1A9002ED21A /* Info.plist */,
 				9678E1A31DE0D1A9002ED21A /* Supporting Files */,
-				9678E1BA1DE0D684002ED21A /* NotificationTableViewController.h */,
-				9678E1BB1DE0D684002ED21A /* NotificationTableViewController.m */,
+				9678E1BA1DE0D684002ED21A /* NotificationViewController.h */,
+				9678E1BB1DE0D684002ED21A /* NotificationViewController.m */,
 				9678E1BD1DE0D697002ED21A /* OkayViewController.h */,
 				9678E1BE1DE0D697002ED21A /* OkayViewController.m */,
 				9678E1C01DE0D6B0002ED21A /* NotOkayViewController.h */,
@@ -120,6 +133,8 @@
 				9678E1DC1DE104F1002ED21A /* StoreHelper.m */,
 				96B3F3551DE1817900FDDE46 /* GiddyupStd.otf */,
 				96B3F3561DE1817900FDDE46 /* IndieFlower.ttf */,
+				96B3F3661DE2377800FDDE46 /* Notification.h */,
+				96B3F3671DE2377800FDDE46 /* Notification.m */,
 			);
 			path = TellMe;
 			sourceTree = "<group>";
@@ -142,6 +157,19 @@
 				9678E1E21DE131ED002ED21A /* UIView+Toast.m */,
 			);
 			name = Toast;
+			sourceTree = "<group>";
+		};
+		96B3F35C1DE22B3900FDDE46 /* ImageCaching */ = {
+			isa = PBXGroup;
+			children = (
+				96B3F35D1DE22B4E00FDDE46 /* ImageCacheManager.h */,
+				96B3F35E1DE22B4E00FDDE46 /* ImageCacheManager.m */,
+				96B3F35F1DE22B4E00FDDE46 /* JSONHelper.h */,
+				96B3F3601DE22B4E00FDDE46 /* JSONHelper.m */,
+				96B3F3611DE22B4E00FDDE46 /* UIImage+Cache.h */,
+				96B3F3621DE22B4E00FDDE46 /* UIImage+Cache.m */,
+			);
+			name = ImageCaching;
 			sourceTree = "<group>";
 		};
 		CA7C825F5EDE2CF89AF04141 /* Frameworks */ = {
@@ -284,10 +312,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9678E1BC1DE0D684002ED21A /* NotificationTableViewController.m in Sources */,
+				96B3F3681DE2377800FDDE46 /* Notification.m in Sources */,
+				9678E1BC1DE0D684002ED21A /* NotificationViewController.m in Sources */,
 				9678E1DD1DE104F1002ED21A /* StoreHelper.m in Sources */,
+				96B3F3651DE22B4E00FDDE46 /* UIImage+Cache.m in Sources */,
 				9678E1A81DE0D1A9002ED21A /* AppDelegate.m in Sources */,
 				9678E1A51DE0D1A9002ED21A /* main.m in Sources */,
+				96B3F3631DE22B4E00FDDE46 /* ImageCacheManager.m in Sources */,
+				96B3F3641DE22B4E00FDDE46 /* JSONHelper.m in Sources */,
 				9678E1E31DE131ED002ED21A /* UIView+Toast.m in Sources */,
 				9678E1BF1DE0D697002ED21A /* OkayViewController.m in Sources */,
 				9678E1C21DE0D6B0002ED21A /* NotOkayViewController.m in Sources */,
