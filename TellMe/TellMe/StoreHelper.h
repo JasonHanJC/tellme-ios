@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <PubNub/PubNub.h>
 
-typedef void(^SendCompletion)();
+typedef void(^SendCompletion)(BOOL seccuss, NSString *error);
 
 @interface StoreHelper : NSObject
 

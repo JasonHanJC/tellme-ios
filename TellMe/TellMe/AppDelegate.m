@@ -16,36 +16,94 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Override point for customization after application launch
+    
+    
+    PNConfiguration *configuration = [PNConfiguration configurationWithPublishKey:@"pub-c-4a0cff7d-24e0-4af6-8cda-64cea4bcf4e3"
+                                                                     subscribeKey:@"sub-c-08f48a9a-ae8d-11e6-9ab5-0619f8945a4f"];
+    self.client = [PubNub clientWithConfiguration:configuration];
+    
+    [self.client addListener:self];
+    [self.client subscribeToChannels:@[@"dataManager"] withPresence:NO];
+    
+    
+    
+
+    if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error){
+            if( !error ){
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            }
+        }];  
+    }
+    
     return YES;
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - userNotification delegate
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+    
+    //Called when a notification is delivered to a foreground app.
+    
+    NSLog(@"Userinfo %@",notification.request.content.userInfo);
+    
+    completionHandler(UNNotificationPresentationOptionAlert);
+}
+
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+    
+    //Called to let your app know which action was selected by the user for a given notification.
+    
+    NSLog(@"Userinfo %@",response.notification.request.content.userInfo);
+    
+}
+
+#pragma mark - pubnub delegate
+- (void)client:(PubNub *)client didReceiveStatus:(PNStatus *)status {
+   
+}
+
+// Handle new message from one of channels on which client has been subscribed.
+- (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
+    
+    // Handle new message stored in message.data.message
+    if (![message.data.channel isEqualToString:message.data.subscription]) {
+        
+        // Message has been received on channel group stored in message.data.subscription.
+    }
+    else {
+        
+        // Message has been received on channel stored in message.data.channel.
+    }
+    
+    NSLog(@"Received message: %@ on channel %@ at %@", message.data.message,
+          message.data.channel, message.data.timetoken);
+}
 
 @end

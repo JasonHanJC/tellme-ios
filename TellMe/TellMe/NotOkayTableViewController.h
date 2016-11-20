@@ -10,4 +10,6 @@
 
 @interface NotOkayTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *updateButton;
+
 @end

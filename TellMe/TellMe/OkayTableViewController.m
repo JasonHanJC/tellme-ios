@@ -9,6 +9,7 @@
 #import "OkayTableViewController.h"
 #import "AppDefines.h"
 #import "StoreHelper.h"
+#import "UIView+Toast.h"
 
 @interface OkayTableViewController ()
 
@@ -23,6 +24,8 @@
     [super viewDidLoad];
     
     self.tableView.tableFooterView = [UIView new];
+    
+    [self.updateButton setEnabled:NO];
     
     if ([[StoreHelper shareInstance] getStoredOkayArray]) {
         self.okayThingArray = [NSMutableArray arrayWithArray:[[StoreHelper shareInstance] getStoredOkayArray]];
@@ -86,6 +89,8 @@
              return;
         [weakSelf.okayThingArray addObject:name];
         dispatch_async(dispatch_get_main_queue(), ^{
+            if ([weakSelf anyChange])
+                [weakSelf.updateButton setEnabled:YES];
             [weakSelf.tableView reloadData];
         });
     }]];
@@ -99,20 +104,22 @@
         //NSLog(@"%ld", (long)indexPath.row);
         
         [weakSelf.okayThingArray removeObject:weakSelf.okayThingArray[indexPath.row]];
+        if ([self anyChange])
+            [self.updateButton setEnabled:YES];
         [weakSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [weakSelf.tableView setEditing:NO];
     }];
     
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
         
-        [weakSelf editinhThingAtIndex:indexPath.row];
+        [weakSelf editingThingAtIndex:indexPath.row];
         [weakSelf.tableView setEditing:NO];
     }];
     
     return @[deleteAction, editAction];
 }
 
-- (void)editinhThingAtIndex:(NSInteger)index {
+- (void)editingThingAtIndex:(NSInteger)index {
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Edit"
                                                                               message: nil
                                                                        preferredStyle:UIAlertControllerStyleAlert];
@@ -126,10 +133,13 @@
     WEAKSELF
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSArray * textfields = alertController.textFields;
-        UITextField *thingName = textfields[0];
+        UITextField *thingNameFld = textfields[0];
+        NSString *name = [thingNameFld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         [weakSelf.okayThingArray removeObjectAtIndex:index];
-        [weakSelf.okayThingArray insertObject:thingName.text atIndex:index];
+        [weakSelf.okayThingArray insertObject:name atIndex:index];
         dispatch_async(dispatch_get_main_queue(), ^{
+            if ([weakSelf anyChange])
+                [weakSelf.updateButton setEnabled:YES];
             [weakSelf.tableView reloadData];
         });
     }]];
@@ -138,11 +148,28 @@
 }
 
 - (IBAction)update:(UIBarButtonItem *)sender {
-    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:self.okayThingArray] forKey:@"OkayThing"];
-    NSLog(@"%@", self.okayThingArray);
-    NSLog(@"%@", [[StoreHelper shareInstance] getStoredOkayArray]);
-    
-    [[StoreHelper shareInstance] sendWithCompletion:nil];
+    [[StoreHelper shareInstance] setOkayArray:[NSArray arrayWithArray:self.okayThingArray]];
+    [[StoreHelper shareInstance] sendWithCompletion:^(BOOL success, NSString *error){
+        NSString *toastMsg;
+        if (success) {
+            toastMsg = @"Update Success";
+            [self.updateButton setEnabled:NO];
+        } else {
+            toastMsg = error;
+        }
+        
+        [self.view makeToast:toastMsg];
+    }];
 }
+
+- (BOOL)anyChange {
+    NSArray *curOkayArray = [NSArray arrayWithArray:self.okayThingArray];
+    
+    if ([curOkayArray isEqual:[[StoreHelper shareInstance] getStoredOkayArray]]) {
+        return NO;
+    }
+    return YES;
+}
+
 
 @end

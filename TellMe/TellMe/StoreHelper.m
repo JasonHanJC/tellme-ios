@@ -10,6 +10,7 @@
 
 @interface StoreHelper ()
 
+@property (nonatomic, strong) PubNub *client;
 
 @end
 
@@ -19,6 +20,13 @@
     self = [super init];
 
     if (self) {
+        
+        PNConfiguration *configuration = [PNConfiguration configurationWithPublishKey:@"pub-c-4a0cff7d-24e0-4af6-8cda-64cea4bcf4e3"
+                                                                         subscribeKey:@"sub-c-08f48a9a-ae8d-11e6-9ab5-0619f8945a4f"];
+        self.client = [PubNub clientWithConfiguration:configuration];
+    
+        [self.client addListener:self];
+        [self.client subscribeToChannels: @[@"dataManager"] withPresence:NO];
     }
     return self;
 }
@@ -55,22 +63,38 @@
     // create the JSON file
     NSArray *okayArray = [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"OkayThing"]];
     NSArray *notOkayArray = [NSArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"NotOkayThing"]];
-    NSMutableDictionary *dicitonary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:okayArray, @"OkayThings", notOkayArray, @"NotOkayThings", nil];
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:okayArray, @"OkayThings", notOkayArray, @"NotOkayThings", nil];
     
     NSError *error = nil;
     NSData *json;
     
+    NSString *JSONString;
+    
     // Dictionary convertable to JSON ?
-    if ([NSJSONSerialization isValidJSONObject:dicitonary]) {
-        json = [NSJSONSerialization dataWithJSONObject:dicitonary options:NSJSONWritingPrettyPrinted error:&error];
+    if ([NSJSONSerialization isValidJSONObject:dictionary]) {
+        json = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&error];
         if (json != nil && error == nil) {
-            NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
-            
-            NSLog(@"JSON: %@", jsonString);
+            JSONString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+            NSLog(@"JSON: %@", JSONString);
         }
     }
     
-    
+    [self.client publish:dictionary toChannel:@"dataManager" withCompletion:^(PNPublishStatus * _Nonnull status) {
+        if (!status.isError) {
+            NSLog(@"The dictionary is good");
+            
+            if (completion) {
+                completion(YES, nil);
+            }
+        }
+        else {
+            NSLog(@"error: %@", status.errorData.information);
+            
+            if (completion) {
+                completion(NO, status.errorData.information);
+            }
+        }
+    }];
     
 }
 

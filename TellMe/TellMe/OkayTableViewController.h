@@ -10,5 +10,6 @@
 
 @interface OkayTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addOkayBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *updateButton;
 
 @end

@@ -65,6 +65,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addOkayBtn" destination="vb3-QO-azL" id="NOs-OJ-Nla"/>
+                        <outlet property="updateButton" destination="PC7-ne-7fj" id="VpM-V9-VYm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebb-mN-xmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +108,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xcW-py-H9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1143" y="225"/>
+            <point key="canvasLocation" x="1073" y="325"/>
         </scene>
         <!--Notification-->
         <scene sceneID="oSz-Bt-AId">
@@ -126,13 +127,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmg-f0-ODl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="226"/>
+            <point key="canvasLocation" x="134" y="326"/>
         </scene>
-        <!--Okay Things-->
+        <!--Okay-->
         <scene sceneID="EKr-wu-GQj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e6e-U4-bJS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Okay Things" image="Okay" id="fjO-Em-uKG"/>
+                    <tabBarItem key="tabBarItem" title="Okay" image="Okay" id="fjO-Em-uKG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WQp-yS-6Am">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -171,13 +172,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Not Okay Things" id="IIr-XS-cOn">
-                        <barButtonItem key="leftBarButtonItem" title="Update" id="3Q0-gk-SKK"/>
+                        <barButtonItem key="leftBarButtonItem" title="Update" id="3Q0-gk-SKK">
+                            <connections>
+                                <action selector="update:" destination="mPZ-fn-mq5" id="lpb-4w-Otm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="G0I-dm-r33">
                             <connections>
                                 <action selector="addNotOkayThing:" destination="mPZ-fn-mq5" id="dd6-w0-jkp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="updateButton" destination="3Q0-gk-SKK" id="Zxb-me-6No"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mM8-Ur-RH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

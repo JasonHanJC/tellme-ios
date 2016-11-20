@@ -9,6 +9,7 @@
 #import "NotOkayTableViewController.h"
 #import "AppDefines.h"
 #import "StoreHelper.h"
+#import "UIView+Toast.h"
 
 @interface NotOkayTableViewController ()
 
@@ -23,8 +24,10 @@
     
     self.tableView.tableFooterView = [UIView new];
     
-    if ([[StoreHelper shareInstance] getStoredOkayArray]) {
-        self.notOkayArray = [NSMutableArray arrayWithArray:[[StoreHelper shareInstance] getStoredOkayArray]];
+    [self.updateButton setEnabled:NO];
+    
+    if ([[StoreHelper shareInstance] getStoredNotOkayArray]) {
+        self.notOkayArray = [NSMutableArray arrayWithArray:[[StoreHelper shareInstance] getStoredNotOkayArray]];
     } else {
         self.notOkayArray = [[NSMutableArray alloc] init];
     }
@@ -86,6 +89,8 @@
             return;
         [weakSelf.notOkayArray addObject:name];
         dispatch_async(dispatch_get_main_queue(), ^{
+            if ([self anyChange])
+                [self.updateButton setEnabled:YES];
             [weakSelf.tableView reloadData];
         });
     }]];
@@ -99,6 +104,8 @@
         //NSLog(@"%ld", (long)indexPath.row);
         
         [weakSelf.notOkayArray removeObject:weakSelf.notOkayArray[indexPath.row]];
+        if ([self anyChange])
+            [self.updateButton setEnabled:YES];
         [weakSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [weakSelf.tableView setEditing:NO];
     }];
@@ -130,6 +137,8 @@
         [weakSelf.notOkayArray removeObjectAtIndex:index];
         [weakSelf.notOkayArray insertObject:thingName.text atIndex:index];
         dispatch_async(dispatch_get_main_queue(), ^{
+            if ([self anyChange])
+                [self.updateButton setEnabled:YES];
             [weakSelf.tableView reloadData];
         });
     }]];
@@ -137,5 +146,29 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+- (IBAction)update:(UIBarButtonItem *)sender {
+    
+    [[StoreHelper shareInstance] setNotOkayArray:[NSArray arrayWithArray:self.notOkayArray]];
+    [[StoreHelper shareInstance] sendWithCompletion:^(BOOL success, NSString *error){
+        NSString *toastMsg;
+        if (success) {
+            toastMsg = @"Update Success";
+            [self.updateButton setEnabled:NO];
+        } else {
+            toastMsg = error;
+        }
+        
+        [self.view makeToast:toastMsg];
+    }];
+}
+
+- (BOOL)anyChange {
+    NSArray *curOkayArray = [NSArray arrayWithArray:self.notOkayArray];
+    
+    if ([curOkayArray isEqual:[[StoreHelper shareInstance] getStoredNotOkayArray]]) {
+        return NO;
+    }
+    return YES;
+}
 
 @end
