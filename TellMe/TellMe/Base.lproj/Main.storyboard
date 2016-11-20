@@ -130,11 +130,11 @@
             </objects>
             <point key="canvasLocation" x="1073" y="325"/>
         </scene>
-        <!--Notification-->
+        <!--Tell Me-->
         <scene sceneID="oSz-Bt-AId">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aeJ-dr-K9M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notification" image="Notification" id="w3Q-lk-2eo"/>
+                    <tabBarItem key="tabBarItem" title="Tell Me" image="Notification" id="w3Q-lk-2eo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xEZ-Dh-M6l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -233,11 +233,75 @@
                     <connections>
                         <outlet property="tableView" destination="XyV-yE-fH7" id="kAN-U7-Loi"/>
                         <outlet property="updateButton" destination="r3m-1R-LTv" id="z7u-jt-rJA"/>
+                        <segue destination="dQY-AS-56N" kind="presentation" identifier="ChangeNotificationRule" id="nNV-XM-9m2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rle-zu-SPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117.5999999999999" y="2077.5112443778112"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="lsl-I4-PSl">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="FEG-Av-fRM" customClass="SettingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LVN-DX-aHN"/>
+                        <viewControllerLayoutGuide type="bottom" id="JIS-SK-nyO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GCF-rI-aVj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o5v-eR-VMb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FEG-Av-fRM" id="VrO-Ld-iqY"/>
+                                    <outlet property="delegate" destination="FEG-Av-fRM" id="Zs8-zk-xl4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o5v-eR-VMb" firstAttribute="leading" secondItem="GCF-rI-aVj" secondAttribute="leading" id="1KI-0G-wMF"/>
+                            <constraint firstItem="o5v-eR-VMb" firstAttribute="top" secondItem="LVN-DX-aHN" secondAttribute="bottom" id="3LP-UO-9iW"/>
+                            <constraint firstAttribute="trailing" secondItem="o5v-eR-VMb" secondAttribute="trailing" id="eBd-nU-wri"/>
+                            <constraint firstItem="JIS-SK-nyO" firstAttribute="top" secondItem="o5v-eR-VMb" secondAttribute="bottom" id="m9H-5J-dCb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hxk-iN-Evj">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="MZ9-Ot-luq">
+                            <connections>
+                                <action selector="cancelAction:" destination="FEG-Av-fRM" id="z3f-LN-A6E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="CancelBtn" destination="MZ9-Ot-luq" id="FOT-6p-2ol"/>
+                        <outlet property="tableView" destination="o5v-eR-VMb" id="F9D-uK-Emx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4PX-A8-SV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942" y="2078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oUh-6A-AU9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dQY-AS-56N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bMT-pg-Svd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FEG-Av-fRM" kind="relationship" relationship="rootViewController" id="hmy-I9-K2m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ce9-BW-m6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2078" y="2078"/>
         </scene>
     </scenes>
     <resources>
@@ -247,5 +311,5 @@
         <image name="Setting" width="20" height="21"/>
         <image name="Update" width="22" height="20"/>
     </resources>
-    <color key="tintColor" red="1" green="0.77945963541666663" blue="0.20673285590277779" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

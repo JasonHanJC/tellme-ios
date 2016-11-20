@@ -22,6 +22,7 @@
 		9678E1E51DE134B5002ED21A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9678E1E41DE134B5002ED21A /* QuartzCore.framework */; };
 		96B3F3571DE1817900FDDE46 /* GiddyupStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96B3F3551DE1817900FDDE46 /* GiddyupStd.otf */; };
 		96B3F3581DE1817900FDDE46 /* IndieFlower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B3F3561DE1817900FDDE46 /* IndieFlower.ttf */; };
+		96B3F35B1DE18F7500FDDE46 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3F35A1DE18F7500FDDE46 /* SettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		9678E1E41DE134B5002ED21A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		96B3F3551DE1817900FDDE46 /* GiddyupStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GiddyupStd.otf; sourceTree = "<group>"; };
 		96B3F3561DE1817900FDDE46 /* IndieFlower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndieFlower.ttf; sourceTree = "<group>"; };
+		96B3F3591DE18F7500FDDE46 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		96B3F35A1DE18F7500FDDE46 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		97408AA68A349FE858DF3AF1 /* Pods-TellMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TellMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TellMe/Pods-TellMe.debug.xcconfig"; sourceTree = "<group>"; };
 		AA752C7CD99359E43BFA6899 /* Pods-TellMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TellMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TellMe/Pods-TellMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +114,8 @@
 				9678E1BE1DE0D697002ED21A /* OkayViewController.m */,
 				9678E1C01DE0D6B0002ED21A /* NotOkayViewController.h */,
 				9678E1C11DE0D6B0002ED21A /* NotOkayViewController.m */,
+				96B3F3591DE18F7500FDDE46 /* SettingViewController.h */,
+				96B3F35A1DE18F7500FDDE46 /* SettingViewController.m */,
 				9678E1DB1DE104F1002ED21A /* StoreHelper.h */,
 				9678E1DC1DE104F1002ED21A /* StoreHelper.m */,
 				96B3F3551DE1817900FDDE46 /* GiddyupStd.otf */,
@@ -286,6 +291,7 @@
 				9678E1E31DE131ED002ED21A /* UIView+Toast.m in Sources */,
 				9678E1BF1DE0D697002ED21A /* OkayViewController.m in Sources */,
 				9678E1C21DE0D6B0002ED21A /* NotOkayViewController.m in Sources */,
+				96B3F35B1DE18F7500FDDE46 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

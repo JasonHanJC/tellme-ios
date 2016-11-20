@@ -63,11 +63,21 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"NotOkayIdentifier"];
     }
+    UIButton *changeSettingBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    changeSettingBtn.frame = CGRectMake(0, 0, 30, 30);
+    [changeSettingBtn setImage:[UIImage imageNamed:@"Setting"] forState:UIControlStateNormal];
+    changeSettingBtn.tag = indexPath.row;
+    [changeSettingBtn addTarget:self action:@selector(editNotificationRule:) forControlEvents:UIControlEventTouchUpInside];
     
+    cell.accessoryView = changeSettingBtn;
     cell.imageView.image = [UIImage imageNamed:@"NOkay"];
     cell.textLabel.text = self.notOkayArray[indexPath.row];
     
     return cell;
+}
+
+- (void)editNotificationRule:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"ChangeNotificationRule" sender:[NSNumber numberWithLong:sender.tag]];
 }
 
 - (IBAction)addNotOkayThing:(UIBarButtonItem *)sender {
@@ -170,6 +180,10 @@
         return NO;
     }
     return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
 }
 
 @end
