@@ -131,9 +131,6 @@
         
         // Message has been received on channel stored in message.data.channel.
     }
-    
-    NSLog(@"Received message: %@ on channel %@ at %@", message.data.message,
-          message.data.channel, message.data.timetoken);
 }
 
 @end

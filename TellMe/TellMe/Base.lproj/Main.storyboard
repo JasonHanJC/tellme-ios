@@ -109,6 +109,9 @@
                                     <constraint firstAttribute="height" constant="60" id="H64-17-oxE"/>
                                 </constraints>
                                 <state key="normal" image="Talk"/>
+                                <connections>
+                                    <action selector="goToMessage:" destination="shn-Tn-4H4" eventType="touchUpInside" id="AxY-ps-Sez"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,11 +136,41 @@
                         <outlet property="tableView" destination="pJt-zW-2Yp" id="wgJ-5A-RHO"/>
                         <outlet property="talkBtnBottomCN" destination="fve-a7-BmP" id="S7p-UI-Q15"/>
                         <outlet property="talkButton" destination="n1Z-uR-lcD" id="Kl3-dX-vdS"/>
+                        <segue destination="c9M-Oo-zSs" kind="show" identifier="dummyMessage" id="Nnf-UW-6gF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JI9-vn-DdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117.5999999999999" y="325.18740629685158"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jz8-83-QC1">
+            <objects>
+                <viewController id="c9M-Oo-zSs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xVJ-Zs-Ahd"/>
+                        <viewControllerLayoutGuide type="bottom" id="aKE-LE-4y1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jts-z9-j8O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="F7Y-LS-vKp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="546"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aKE-LE-4y1" firstAttribute="top" secondItem="F7Y-LS-vKp" secondAttribute="bottom" constant="8" id="JSE-pP-VCN"/>
+                            <constraint firstItem="F7Y-LS-vKp" firstAttribute="top" secondItem="xVJ-Zs-Ahd" secondAttribute="bottom" id="NGq-6d-yer"/>
+                            <constraint firstAttribute="trailing" secondItem="F7Y-LS-vKp" secondAttribute="trailing" id="d7N-Lf-9r6"/>
+                            <constraint firstItem="F7Y-LS-vKp" firstAttribute="leading" secondItem="Jts-z9-j8O" secondAttribute="leading" id="fxp-pI-b0Y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJ0-8C-7O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2104.8000000000002" y="324.28785607196403"/>
         </scene>
         <!--Tell Me-->
         <scene sceneID="oSz-Bt-AId">
@@ -320,6 +353,7 @@
         <image name="Okay" width="21" height="25"/>
         <image name="Talk" width="40" height="33"/>
         <image name="Update" width="22" height="20"/>
+        <image name="message" width="320" height="568"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
